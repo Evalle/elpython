@@ -25,3 +25,6 @@ txt_again = open(file_again)
 # ... and print out txt_again variable
 print txt_again.read()
 
+txt.close()
+txt_again.close()
+
