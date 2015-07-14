@@ -1,4 +1,4 @@
-print "You enter a dark room with two doors. Do you go through door #1 or door #2?"
+print "You enter a dark room with three doors. What door will you choose? Door #1, Door #2 or Door #3?"
 
 door = raw_input("> ")
 
@@ -29,5 +29,20 @@ elif door == "2":
     else:
         print "The insanity rots your eyes into a pool of muck. Good job!"
 
+elif door == "3":
+    print "You enter a dark room, door immideatly closing behind you. You heard someone's creepy voice. What should you do?"
+    print "1. You trying to open door behind you."
+    print "2. You striking a match."
+    print "3. You screaming."
+    do = raw_input("> ")
+
+    if do == "1":
+        print "Creature in the dark eats you. Good job!"
+    elif do == "2":
+        print "Creature in the dark scream of fear, and immediatly jump on you. You die. Good job!"
+    elif do == "3":
+        print "Creature in the dark running in fear. It broke the door. Your free now! Good job!"
+    else:
+        print "You're waiting too long, creature in the dark screaming. Last thing that you heard in your life was this scream"
 else:
     print "You stumble around and fall on a knife and die. Good job!"
