@@ -16,7 +16,7 @@ for i in change:
     print "I got %r" %i
 
 # we can also build lists, first start with an empty one
-elements = [range(0,6)]
+elements = []
 
 # then use the range function to do 0 to 5 counts
 for i in range (0, 6):
