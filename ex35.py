@@ -3,7 +3,7 @@ from sys import exit
 def start():
     print '''
     You are in the dark room.
-    There is a door to your right and left.
+    There is a door to your left and right.
     print "Which one do you take?
     '''
     choice = raw_input("> ")
@@ -42,19 +42,20 @@ def bear_room():
     How are you going to move the bear?
     '''
     bear_moved = False
-    
+    bear_moved_again = False
+
     while True:
         choice = raw_input("> ")
         if choice == "take honey":
             dead("The bear looks at you and then slaps your face off.")
-        # true and not false == true
         elif choice == "taunt bear" and not bear_moved:
             print "The bear has moved from the door. You can go through it now."
             bear_moved = True
-        # true and False ? 
         elif choice == "taunt bear" and bear_moved:
             print "This is not a good idea to taunt bear once again!"
-        elif choice == "taunt bera" and bear_moved:
+            bear_moved = False
+            bear_moved_again = True
+        elif choice == "taunt bera" and bear_moved and bear_moved_again:
             dead("The bear gets pissed off and chews your leg off.")
         elif choice == "open door" and bear_moved:
             gold_room()
