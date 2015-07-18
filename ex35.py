@@ -1,4 +1,4 @@
-from sys import exit()
+from sys import exit
 
 def gold_room():
     print "This room is full of cold. How much do you take?"
@@ -20,13 +20,15 @@ def bear_room():
     print "The fat bear is in front of another door."
     print "How are you going to move the bear?"
     bear_moved = False
+    
     while True:
         choice = raw_input("> ")
 
-        if choice == "Take honey":
+        if choice == "take honey":
             dead("The bear looks at you and then slaps your face off.")
         elif choice == "taunt bear" and not bear_moved:
             print "The bear has moved from the door. You can go through it now."
+            bear_moved = True
         elif choice == "taunt bear" and bear_moved:
             dead("The bear gets pissed off and chews your leg off.")
         elif choice == "open door" and bear_moved:
@@ -39,7 +41,7 @@ def cthulhu_room():
     print "He, it, whatever stares at you and you go insane."
     print "Do you flee for your life or eat your hand?"
 
-    choice = raw_input("> "):
+    choice = raw_input("> ")
 
     if "flee" in choice:
         start()
@@ -67,22 +69,3 @@ def start():
         dead("You stumble around the room until you starve.")
 
 start()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
