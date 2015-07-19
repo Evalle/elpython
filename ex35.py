@@ -1,4 +1,5 @@
 from sys import exit
+import string
 
 def start():
     print '''
@@ -85,7 +86,7 @@ def gold_room():
     '''
 
     choice = raw_input("> ")
-    if "0" in choice or "1" in choice:
+    if choice.isdigit():
         how_much = int(choice)
     else:
         dead("Man, learn to type a number.")
