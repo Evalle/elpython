@@ -47,6 +47,7 @@ def bear_room():
 
     while True:
         choice = raw_input("> ")
+        
         if choice == "take honey":
             dead("The bear looks at you and then slaps your face off.")
         elif choice == "taunt bear" and not bear_moved:
@@ -70,6 +71,7 @@ def magic_lab():
     What will you do?
     '''
     choice = raw_input("> ")
+    
     if 'drink' and 'blue' in choice:
         cthulhu_room()
     elif 'drink' and 'green' in choice:
@@ -84,8 +86,8 @@ def gold_room():
     print '''
     This room is full of gold. How much do you take?
     '''
-
     choice = raw_input("> ")
+    
     if choice.isdigit():
         how_much = int(choice)
     else:
