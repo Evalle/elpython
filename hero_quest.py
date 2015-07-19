@@ -117,9 +117,6 @@ def gold_room():
             Now you have the shiled, good job!
             '''
             gold_room()
-        elif "take" and sword or shield in inventory:
-            print "Sorry, you can't take this"
-            gold_room()
         elif "inventory" in choice:
             check_invent()
             gold_room()
