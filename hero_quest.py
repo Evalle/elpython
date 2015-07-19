@@ -1,12 +1,10 @@
 from sys import exit
 import string
 
-# some variables
-
 lives = 3
 inventory = []
 
-# this function is for hero's inventory
+# this function is for hero's inventory checking
 def check_invent():
     if len(inventory) == 0:
         print '''
@@ -18,9 +16,10 @@ def check_invent():
 
 # this function is for hero's lives checking
 def check_lives():
+    global lives
     if lives == 1:
         print '''
-        >>> You have only 1 live left, be careful, my friend! <<<
+        >>> You have only 1 live left, be careful! <<<
         '''
     else:
         print '''
@@ -28,7 +27,7 @@ def check_lives():
         ''' % lives
 
 def dead():
-    print "You have 0 lives, my friend, you're dead!"
+    print "You have 0 lives you're dead!"
     exit(0)
 
 def tip1():
@@ -43,7 +42,8 @@ def tip2():
     you can just write 'lives'
     '''
 
-def damage(lives):
+def damage():
+    global lives
     lives = lives - 1
     return lives
 
@@ -51,7 +51,7 @@ tip1()
 tip2()
 # start the game
 def start():
-
+    global lives
     if lives == 0:
         dead()
     else:
@@ -93,18 +93,18 @@ def gold_room():
         Another one has a shield.
         What will you do?
         '''
-        choice = raw_input("> Make a choice: ")
+        choice = raw_input("> Make your choice: ")
         sword = 'sword'
         shield = 'shield'
 
         if "coin" in choice:
             print '''
             You feel that the floor is going down from over your feet.
-            You're falling down in to darkness...
+            You falling down into darkness...
             '''
-            # we have a problem here, can't decrement a lives
-            damage(lives)
-            start()
+            # we have a problem here, can't decrement lives
+            damage()
+            gold_room()
         elif "take" and "sword" in choice:
             inventory.append('sword')
             print '''
@@ -128,6 +128,6 @@ def lab_room():
     print '''
     You're in the lab_room
     '''
-    dead()
+
 
 start()
