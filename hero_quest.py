@@ -14,9 +14,19 @@ def invent():
         for i in inventory:
             print "You have %r in you inventory" % i
 
+def dead():
+    print "You have 0 lives, my friend, you're dead!"
+    exit(0)
+
+
 # start the game
 def start():
-    print '''
+# probably we need to have some function here to check lives
+    if lives == 0:
+        dead()
+    else:
+
+        print '''
     You're in the middle of the strange dark cave.
     you have %d lives now. Be careful my frined!
 
@@ -27,22 +37,22 @@ def start():
     One in the left and another one in the right from you.
     Which one you will choose?
     ''' % lives
-    choice = raw_input('> Choose your door (left or right): ')
-    if "left" in choice:
-        gold_room()
-    elif "right" in choice:
-        lab_room()
-    elif "inventory" in choice:
-        invent()
-        start()
-    else:
-        print "Please choose your door"
-        start()
 
-def dead():
-    exit(0)
+        choice = raw_input('> Choose your door (left or right): ')
+
+        if "left" in choice:
+            gold_room()
+        elif "right" in choice:
+            lab_room()
+        elif "inventory" in choice:
+            invent()
+            start()
+        else:
+            print "Please choose your door"
+            start()
 
 def gold_room():
+
     print '''
     You're in the gold room
     '''
