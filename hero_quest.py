@@ -14,7 +14,7 @@ def check_invent():
     '''
     else:
         for i in inventory:
-            print "You have %r in you inventory" % i
+            print "You have the %r in you inventory" % i
 
 # this function is for hero's lives checking
 def check_lives():
@@ -43,6 +43,10 @@ def tip2():
     you can just write 'lives'
     '''
 
+def damage(lives):
+    lives = lives - 1
+    return lives
+
 tip1()
 tip2()
 # start the game
@@ -55,7 +59,7 @@ def start():
         print '''
     You're in the middle of the strange dark cave.
     You can see two doors.
-    One in the left and another one in the right from you.
+    One in the left and another in the right from you.
     Which one you will choose?
     '''
 
@@ -76,18 +80,52 @@ def start():
             start()
 
 def gold_room():
+
     if lives == 0:
         dead()
     else:
         print '''
         You're in the gold room.
         It's full of gold coins,
-        In front of you there is two big statues.
+        In front of you there are two big statues.
         You can feel that they're watching you.
-        One of the statues has a small silver sword.
-        Another one has a shield
+        One of the statues has a sword.
+        Another one has a shield.
+        What will you do?
         '''
+        choice = raw_input("> Make a choice: ")
+        sword = 'sword'
+        shield = 'shield'
 
+        if "coin" in choice:
+            print '''
+            You feel that the floor is going down from over your feet.
+            You're falling down in to darkness...
+            '''
+            # we have a problem here, can't decrement a lives
+            damage(lives)
+            start()
+        elif "take" and "sword" in choice:
+            inventory.append('sword')
+            print '''
+            Now you have the sword, good job!
+            '''
+            gold_room()
+        elif "take" and "shield" in choice:
+            inventory.append('shield')
+            print '''
+            Now you have the shiled, good job!
+            '''
+            gold_room()
+        elif "take" and sword or shield in inventory:
+            print "Sorry, you can't take this"
+            gold_room()
+        elif "inventory" in choice:
+            check_invent()
+            gold_room()
+        elif "lives" in choice:
+            check_lives()
+            gold_room()
 
 def lab_room():
     print '''
