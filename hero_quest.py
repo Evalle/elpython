@@ -7,36 +7,57 @@ lives = 3
 inventory = []
 
 # this function is for hero's inventory
-def invent():
+def check_invent():
     if len(inventory) == 0:
-        print "Your inventory is empty now"
+        print '''
+    >>> Your inventory is empty <<<
+    '''
     else:
         for i in inventory:
             print "You have %r in you inventory" % i
+
+# this function is for hero's lives checking
+def check_lives():
+    if lives == 1:
+        print '''
+        >>> You have only 1 live left, be careful, my friend! <<<
+        '''
+    else:
+        print '''
+        >>> You have %d lives <<<
+        ''' % lives
 
 def dead():
     print "You have 0 lives, my friend, you're dead!"
     exit(0)
 
+def tip1():
+    print '''
+    TIP: If you want to check your inventory now
+    you can just write 'inventory'
+    '''
 
+def tip2():
+    print '''
+    TIP: To check the status of you lives now
+    you can just write 'lives'
+    '''
+
+tip1()
+tip2()
 # start the game
 def start():
-# probably we need to have some function here to check lives
+
     if lives == 0:
         dead()
     else:
 
         print '''
     You're in the middle of the strange dark cave.
-    you have %d lives now. Be careful my frined!
-
-    TIP: If you want to check your inventory now
-    you can just write 'inventory'
-
     You can see two doors.
     One in the left and another one in the right from you.
     Which one you will choose?
-    ''' % lives
+    '''
 
         choice = raw_input('> Choose your door (left or right): ')
 
@@ -45,18 +66,28 @@ def start():
         elif "right" in choice:
             lab_room()
         elif "inventory" in choice:
-            invent()
+            check_invent()
+            start()
+        elif "lives" in choice:
+            check_lives()
             start()
         else:
             print "Please choose your door"
             start()
 
 def gold_room():
+    if lives == 0:
+        dead()
+    else:
+        print '''
+        You're in the gold room.
+        It's full of gold coins,
+        In front of you there is two big statues.
+        You can feel that they're watching you.
+        One of the statues has a small silver sword.
+        Another one has a shield
+        '''
 
-    print '''
-    You're in the gold room
-    '''
-    dead()
 
 def lab_room():
     print '''
