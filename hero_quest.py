@@ -1,6 +1,15 @@
 from sys import exit
+import random
 
+# variables
 lives = 3
+tip1 = "TIP: To check your invntory type 'inventory'"
+tip2 = "TIP: To check your lives type 'lives'"
+tip3 = "TIP: To return to your previous location type 'back'"
+tip4 = "TIP: To exit the game type 'exit'"
+
+# lists
+tips = [tip1, tip2, tip3, tip4]
 inventory = []
 
 # this function is for hero's inventory checking
@@ -31,24 +40,10 @@ def dead():
     '''
     exit(0)
 
-def tip1():
-    print '''
-    TIP: To check your invntory type 'inventory'
-    '''
-
-def tip2():
-    print '''
-    TIP: To check your lives type 'lives'
-    '''
-
-def tip3():
-    print '''
-    TIP: To return to your previous location type 'back'
-    '''
-def tip4():
-    print '''
-    TIP: To exit the game type 'exit'
-    '''
+def tip_rand():
+    global tips
+    rand_tips = random.choice(tips)
+    print rand_tips
 
 def turn_back(function):
     function()
@@ -57,20 +52,15 @@ def damage():
     global lives
     lives = lives - 1
     return lives
-# probably we nned to print these lines randomly in each location
-tip1()
-tip2()
-tip3()
-tip4()
 
 # start the game
 def start():
+    tip_rand()
     global lives
 
     if lives == 0:
         dead()
     else:
-
         print '''
     ------------------------------------------------------
     | You're in the middle of the strange dark cave.     |
@@ -100,6 +90,7 @@ def start():
             start()
 
 def gold_room():
+    tip_rand()
     global lives
 
     if lives == 0:
@@ -152,6 +143,7 @@ def gold_room():
             gold_room()
 
 def lab_room():
+    tip_rand()
     global lives
 
     if lives == 0:
