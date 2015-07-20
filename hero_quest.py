@@ -1,5 +1,4 @@
 from sys import exit
-import string
 
 lives = 3
 inventory = []
@@ -34,20 +33,21 @@ def dead():
 
 def tip1():
     print '''
-    TIP: If you want to check your inventory now
-    you can just write 'inventory' in the section below
+    TIP: To check your invntory type 'inventory'
     '''
 
 def tip2():
     print '''
-    TIP: To check the status of you lives now
-    you can just write 'lives' in the section below
+    TIP: To check your lives type 'lives'
     '''
 
 def tip3():
     print '''
-    TIP: If you want to return to your previous location
-    you can just write 'back' in the section below
+    TIP: To return to your previous location type 'back'
+    '''
+def tip4():
+    print '''
+    TIP: To exit the game type 'exit'
     '''
 
 def turn_back(function):
@@ -57,10 +57,11 @@ def damage():
     global lives
     lives = lives - 1
     return lives
-
+# probably we nned to print these lines randomly in each location
 tip1()
 tip2()
 tip3()
+tip4()
 
 # start the game
 def start():
@@ -78,7 +79,6 @@ def start():
     | Which one you will choose?                         |
     ------------------------------------------------------
     '''
-
         choice = raw_input('> Choose your door (left or right): ')
 
         if "left" in choice:
@@ -148,7 +148,7 @@ def gold_room():
         elif "exit" in choice:
             exit(0)
         else:
-            print "I can't understand you! Make your choice and make it fast!"
+            print "I can't understand you!"
             gold_room()
 
 def lab_room():
@@ -203,7 +203,7 @@ def lab_room():
         elif "exit" in choice:
             exit(0)
         else:
-            print "I can't understand you! Make your choice and make it fast!"
+            print "I can't understand you!"
             gold_room()
 
 start()
