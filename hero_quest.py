@@ -102,7 +102,6 @@ def gold_room():
             You feel that the floor is going down from over your feet.
             You falling down into darkness...
             '''
-            # we have a problem here, can't decrement lives
             damage()
             gold_room()
         elif "take" and "sword" in choice:
@@ -126,8 +125,35 @@ def gold_room():
 
 def lab_room():
     print '''
-    You're in the lab_room
+    You're in the Great Sorcerer's labaratory.
+    You see a lot of interesting stuff here:
+    Bat wings, skulls, and old books with strange sparkly names on them.
+    On the big wood table you can see three poitions:
+    A blue one.
+    A green one.
+    And a red one.
+    What will you do?
     '''
-
-
+    choice = raw_input('> Make your choice: ')
+    if "drink" in choice:
+        print '''
+        This is not a good idea to drink
+        a potion in Sorcerer's room!
+        '''
+        damage()
+        lab_room()
+    elif "take" in choice:
+        print '''
+        You can hear the steps behind you.
+        You turned around immediatly and last thing
+        that you can saw was the angry old mans' face
+        '''
+        damage()
+        lab_room()
+    elif "inventory" in choice:
+        check_invent()
+        lab_room()
+    elif "lives" in choice:
+        check_lives()
+        lab_room()
 start()
