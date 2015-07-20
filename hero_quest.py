@@ -19,11 +19,11 @@ def check_lives():
     global lives
     if lives == 1:
         print '''
-        >>> You have only 1 live left, be careful! <<<
+    >>> You have only 1 live left, be careful! <<<
         '''
     else:
         print '''
-        >>> You have %d lives <<<
+    >>> You have %d lives <<<
         ''' % lives
 
 def dead():
@@ -85,25 +85,26 @@ def start():
             start()
 
 def gold_room():
+    global lives
 
     if lives == 0:
         dead()
     else:
         print '''
-        You're in the gold room.
-        It's full of gold coins,
-        In front of you there are two big statues.
-        You can feel that they're watching you.
-        One of the statues has a sword.
-        Another one has a shield.
-        What will you do?
+    You're in the gold room.
+    It's full of gold coins,
+    In front of you there are two big statues.
+    You can feel that they're watching you.
+    One of the statues has a sword.
+    Another one has a shield.
+    What will you do?
         '''
         choice = raw_input("> Make your choice: ")
 
         if "coin" in choice:
             print '''
-            You feel that the floor is going down from over your feet.
-            You falling down into darkness...
+    You feel that the floor is going down from over your feet.
+    You falling down into darkness...
             '''
             damage()
             start()
@@ -129,6 +130,7 @@ def gold_room():
             exit(0)
 
 def lab_room():
+    global lives
 
     if lives == 0:
         dead()
@@ -157,8 +159,9 @@ def lab_room():
             print '''
     You can hear the steps behind you.
     You turned around immediatly and last thing
-    that you can saw was the angry old mans' face
-        '''
+    that you can see was the angry old mans' face.
+    He put a very powerful spell on you.
+    '''
             damage()
             start()
         elif "inventory" in choice:
