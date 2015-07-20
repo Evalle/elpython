@@ -27,7 +27,9 @@ def check_lives():
         ''' % lives
 
 def dead():
-    print "You have no lives left you're dead!"
+    print '''
+    >>> You have no lives left you're dead! <<<
+    '''
     exit(0)
 
 def tip1():
@@ -52,6 +54,7 @@ tip2()
 # start the game
 def start():
     global lives
+
     if lives == 0:
         dead()
     else:
@@ -75,6 +78,8 @@ def start():
         elif "lives" in choice:
             check_lives()
             start()
+        elif "exit" in choice:
+            exit(0)
         else:
             print "Please choose your door"
             start()
@@ -94,8 +99,6 @@ def gold_room():
         What will you do?
         '''
         choice = raw_input("> Make your choice: ")
-        sword = 'sword'
-        shield = 'shield'
 
         if "coin" in choice:
             print '''
@@ -103,7 +106,7 @@ def gold_room():
             You falling down into darkness...
             '''
             damage()
-            gold_room()
+            start()
         elif "take" and "sword" in choice:
             inventory.append('sword')
             print '''
@@ -122,8 +125,11 @@ def gold_room():
         elif "lives" in choice:
             check_lives()
             gold_room()
+        elif "exit" in choice:
+            exit(0)
 
 def lab_room():
+
     if lives == 0:
         dead()
     else:
@@ -140,25 +146,27 @@ def lab_room():
         choice = raw_input('> Make your choice: ')
         if "drink" in choice:
             print '''
-        You feel a fire inside you.
-        You last thought in this life was:
-        "This is was a not good idea to drink
-        a potion in Sorcerer's room"
+    You feel a fire inside you.
+    You last thought in this life was:
+    "This is was a not good idea to drink
+    a potion in Sorcerer's room"
         '''
             damage()
-            lab_room()
+            start()
         elif "take" in choice:
             print '''
-        You can hear the steps behind you.
-        You turned around immediatly and last thing
-        that you can saw was the angry old mans' face
+    You can hear the steps behind you.
+    You turned around immediatly and last thing
+    that you can saw was the angry old mans' face
         '''
             damage()
-            lab_room()
+            start()
         elif "inventory" in choice:
             check_invent()
             lab_room()
         elif "lives" in choice:
             check_lives()
             lab_room()
+        elif "exit" in choice:
+            exit(0)
 start()
