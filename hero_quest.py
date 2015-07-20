@@ -12,6 +12,18 @@ tip4 = "\nTIP: To exit the game type 'exit'\n"
 tips = [tip1, tip2, tip3, tip4]
 inventory = []
 
+# classes
+# use this class like this: print bcolors.FAIL + "Warning: No active frommets remain. Continue?" + bcolors.ENDC
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 # this function is for hero's inventory checking
 def check_invent():
     if len(inventory) == 0:
@@ -156,16 +168,16 @@ def lab_room():
         dead()
     else:
         print '''
-    ------------------------------------------------------------------------
+    -------------------------------------------------------------------------
     | You're in the Great Sorcerer's labaratory.                            |
     | You see a lot of interesting stuff here.                              |
     | Bat wings, skulls, and old books with strange sparkly names on them.  |
     | On the big wood table you can see three poitions:                     |
-    | A blue one.                                                           |
-    | A green one.                                                          |
-    | And a red one.                                                        |
+    | o A blue one.                                                         |
+    | o A green one.                                                        |
+    | o And a red one.                                                      |
     | What will you do?                                                     |
-    ------------------------------------------------------------------------
+    -------------------------------------------------------------------------
     '''
         choice = raw_input('> Make your choice: ')
         if "drink" in choice:
@@ -190,6 +202,7 @@ def lab_room():
     '''
             damage()
             start()
+        elif ""
         elif "inventory" in choice:
             check_invent()
             lab_room()
