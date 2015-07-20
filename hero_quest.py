@@ -35,14 +35,23 @@ def dead():
 def tip1():
     print '''
     TIP: If you want to check your inventory now
-    you can just write 'inventory'
+    you can just write 'inventory' in the section below
     '''
 
 def tip2():
     print '''
     TIP: To check the status of you lives now
-    you can just write 'lives'
+    you can just write 'lives' in the section below
     '''
+
+def tip3():
+    print '''
+    TIP: If you want to return to your previous location
+    you can just write 'back' in the section below
+    '''
+
+def turn_back(function):
+    function()
 
 def damage():
     global lives
@@ -51,6 +60,8 @@ def damage():
 
 tip1()
 tip2()
+tip3()
+
 # start the game
 def start():
     global lives
@@ -60,10 +71,12 @@ def start():
     else:
 
         print '''
-    You're in the middle of the strange dark cave.
-    You can see two doors.
-    One in the left and another in the right from you.
-    Which one you will choose?
+    ------------------------------------------------------
+    | You're in the middle of the strange dark cave.     |
+    | You can see two doors.                             |
+    | One in the left and another in the right from you. |
+    | Which one you will choose?                         |
+    ------------------------------------------------------
     '''
 
         choice = raw_input('> Choose your door (left or right): ')
@@ -80,6 +93,8 @@ def start():
             start()
         elif "exit" in choice:
             exit(0)
+        elif "back" in choice:
+            turn_back(start())
         else:
             print "Please choose your door"
             start()
@@ -91,13 +106,15 @@ def gold_room():
         dead()
     else:
         print '''
-    You're in the gold room.
-    It's full of gold coins,
-    In front of you there are two big statues.
-    You can feel that they're watching you.
-    One of the statues has a sword.
-    Another one has a shield.
-    What will you do?
+    -----------------------------------------------
+    | You're in the gold room.                    |
+    | It's full of gold coins,                    |
+    | In front of you there are two big statues.  |
+    | You can feel that they're watching you.     |
+    | One of the statues has a sword.             |
+    | Another one has a shield.                   |
+    | What will you do?                           |
+    -----------------------------------------------
         '''
         choice = raw_input("> Make your choice: ")
 
@@ -126,8 +143,13 @@ def gold_room():
         elif "lives" in choice:
             check_lives()
             gold_room()
+        elif "back" in choice:
+            turn_back(start())
         elif "exit" in choice:
             exit(0)
+        else:
+            print "I can't understand you! Make your choice and make it fast!"
+            gold_room()
 
 def lab_room():
     global lives
@@ -136,31 +158,37 @@ def lab_room():
         dead()
     else:
         print '''
-    You're in the Great Sorcerer's labaratory.
-    You see a lot of interesting stuff here:
-    Bat wings, skulls, and old books with strange sparkly names on them.
-    On the big wood table you can see three poitions:
-    A blue one.
-    A green one.
-    And a red one.
-    What will you do?
+    ------------------------------------------------------------------------
+    | You're in the Great Sorcerer's labaratory.                            |
+    | You see a lot of interesting stuff here.                              |
+    | Bat wings, skulls, and old books with strange sparkly names on them.  |
+    | On the big wood table you can see three poitions:                     |
+    | A blue one.                                                           |
+    | A green one.                                                          |
+    | And a red one.                                                        |
+    | What will you do?                                                     |
+    ------------------------------------------------------------------------
     '''
         choice = raw_input('> Make your choice: ')
         if "drink" in choice:
             print '''
-    You feel a fire inside you.
-    You last thought in this life was:
-    "This is was a not good idea to drink
-    a potion in Sorcerer's room"
+    -----------------------------------------
+    | You feel a fire inside you.           |
+    | You last thought in this life was:    |
+    | "This is was a not good idea to drink |
+    | a potion in Sorcerer's room"          |
+    -----------------------------------------
         '''
             damage()
             start()
         elif "take" in choice:
             print '''
-    You can hear the steps behind you.
-    You turned around immediatly and last thing
-    that you can see was the angry old mans' face.
-    He put a very powerful spell on you.
+    -----------------------------------------------------
+    | You can hear the steps behind you.                |
+    | You turned around immediatly and last thing       |
+    | that you can see was the angry old mans' face.    |
+    | He put a very powerful spell on you.              |
+    -----------------------------------------------------
     '''
             damage()
             start()
@@ -170,6 +198,12 @@ def lab_room():
         elif "lives" in choice:
             check_lives()
             lab_room()
+        elif "back" in choice:
+            turn_back(start())
         elif "exit" in choice:
             exit(0)
+        else:
+            print "I can't understand you! Make your choice and make it fast!"
+            gold_room()
+
 start()
