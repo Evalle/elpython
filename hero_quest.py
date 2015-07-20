@@ -3,10 +3,10 @@ import random
 
 # variables
 lives = 3
-tip1 = "TIP: To check your invntory type 'inventory'"
-tip2 = "TIP: To check your lives type 'lives'"
-tip3 = "TIP: To return to your previous location type 'back'"
-tip4 = "TIP: To exit the game type 'exit'"
+tip1 = "\nTIP: To check your inventory type 'inventory'\n"
+tip2 = "\nTIP: To check your lives type 'lives'\n"
+tip3 = "\nTIP: To return to your previous location type 'back'\n"
+tip4 = "\nTIP: To exit the game type 'exit'\n"
 
 # lists
 tips = [tip1, tip2, tip3, tip4]
@@ -20,7 +20,9 @@ def check_invent():
     '''
     else:
         for i in inventory:
-            print "You have the %r in you inventory" % i
+            print '''
+    >>> \nYou have the %r in you inventory <<<
+            ''' % i
 
 # this function is for hero's lives checking
 def check_lives():
@@ -36,7 +38,7 @@ def check_lives():
 
 def dead():
     print '''
-    >>> You have no lives left you're dead! <<<
+    >>> You have no lives left, you're dead! <<<
     '''
     exit(0)
 
@@ -86,7 +88,9 @@ def start():
         elif "back" in choice:
             turn_back(start())
         else:
-            print "Please choose your door"
+            print '''
+    == Please choose your door ==
+    '''
             start()
 
 def gold_room():
@@ -111,21 +115,21 @@ def gold_room():
 
         if "coin" in choice:
             print '''
-    You feel that the floor is going down from over your feet.
-    You falling down into darkness...
+    == You feel that the floor is going down from over your feet. ==
+    == You falling down into darkness...                          ==
             '''
             damage()
             start()
         elif "take" and "sword" in choice:
             inventory.append('sword')
             print '''
-            Now you have the sword, good job!
+    == Now you have the sword, good job! ==
             '''
             gold_room()
         elif "take" and "shield" in choice:
             inventory.append('shield')
             print '''
-            Now you have the shiled, good job!
+    == Now you have the shield, good job! ==
             '''
             gold_room()
         elif "inventory" in choice:
@@ -139,7 +143,9 @@ def gold_room():
         elif "exit" in choice:
             exit(0)
         else:
-            print "I can't understand you!"
+            print '''
+    == I can't understand you! ==
+            '''
             gold_room()
 
 def lab_room():
