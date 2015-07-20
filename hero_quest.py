@@ -27,7 +27,7 @@ def check_lives():
         ''' % lives
 
 def dead():
-    print "You have 0 lives you're dead!"
+    print "You have no lives left you're dead!"
     exit(0)
 
 def tip1():
@@ -140,8 +140,10 @@ def lab_room():
         choice = raw_input('> Make your choice: ')
         if "drink" in choice:
             print '''
-        This is not a good idea to drink
-        a potion in Sorcerer's room!
+        You feel a fire inside you.
+        You last thought in this life was:
+        "This is was a not good idea to drink
+        a potion in Sorcerer's room"
         '''
             damage()
             lab_room()
