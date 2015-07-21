@@ -13,45 +13,45 @@ tips = [tip1, tip2, tip3, tip4]
 inventory = []
 
 # classes
-# use this class like this: print bcolors.FAIL + "Warning: No active frommets remain. Continue?" + bcolors.ENDC
+# use this class like this: print bcolors.RED + "Warning: No active frommets remain. Continue?" + bcolors.END
 class bcolors:
     HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    INFO = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    END = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
 # this function is for hero's inventory checking
 def check_invent():
     if len(inventory) == 0:
-        print bcolors.INFO + '''
+        print bcolors.YELLOW + '''
     >>> Your inventory is empty <<<
-    ''' + bcolors.ENDC
+    ''' + bcolors.END
     else:
         for i in inventory:
-            print bcolors.INFO + '''
+            print bcolors.YELLOW + '''
     >>> You have the %r in your inventory <<<
-            ''' % i + bcolors.ENDC
+            ''' % i + bcolors.END
 
 # this function is for hero's lives checking
 def check_lives():
     global lives
     if lives == 1:
-        print bcolors.FAIL + '''
+        print bcolors.RED + '''
     >>> You have only 1 live left, be careful! <<<
-        ''' + bcolors.ENDC
+        ''' + bcolors.END
     else:
-        print bcolors.INFO + '''
+        print bcolors.YELLOW + '''
     >>> You have %d lives <<<
-        ''' % lives + bcolors.ENDC
+        ''' % lives + bcolors.END
 
 def dead():
-    print bcolors.FAIL + '''
+    print bcolors.RED + '''
     >>> You have no lives left, you're dead! <<<
-    ''' + bcolors.ENDC
+    ''' + bcolors.END
     exit(0)
 
 def tip_rand():
@@ -126,23 +126,31 @@ def gold_room():
         choice = raw_input("> Make your choice: ")
 
         if "coin" in choice:
-            print '''
-    == You feel that the floor is going down from over your feet. ==
-    == You falling down into darkness...                          ==
-            '''
+            print bcolors.BLUE + '''
+    --------------------------------------------------------------
+    | You feel that floor is going down from over your feet.     |
+    | You falling down into darkness...                          |
+    --------------------------------------------------------------
+            ''' + bcolors.END
             damage()
             start()
         elif "take" and "sword" in choice:
             inventory.append('sword')
+            print bcolors.BLUE + '''
+    -------------------------------------
+    | Now you have the sword, good job! |
+    -------------------------------------
+            ''' + bcolors.END
             print '''
-    == Now you have the sword, good job! ==
-            '''
+    '''
             gold_room()
         elif "take" and "shield" in choice:
             inventory.append('shield')
-            print '''
-    == Now you have the shield, good job! ==
-            '''
+            print bcolors.BLUE + '''
+    --------------------------------------
+    | Now you have the shield, good job! |
+    --------------------------------------
+            ''' + bcolors.END
             gold_room()
         elif "inventory" in choice:
             check_invent()
@@ -155,9 +163,11 @@ def gold_room():
         elif "exit" in choice:
             exit(0)
         else:
-            print '''
-    == I can't understand you! ==
-            '''
+            print bcolors.BLUE + '''
+    ---------------------------
+    | I can't understand you! |
+    ---------------------------
+            ''' + bcolors.END
             gold_room()
 
 def lab_room():
@@ -179,27 +189,27 @@ def lab_room():
     | What will you do?                                                     |
     -------------------------------------------------------------------------
     '''
-        choice = raw_input('> Make your choice: ') 
+        choice = raw_input('> Make your choice: ')
         if "drink" in choice:
-            print '''
+            print bcolors.BLUE + '''
     -----------------------------------------
     | You feel a fire inside you.           |
     | You last thought in this life was:    |
     | "This is was a not good idea to drink |
     | a potion in Sorcerer's room"          |
     -----------------------------------------
-        '''
+        ''' + bcolors.END
             damage()
             start()
         elif "take" in choice:
-            print '''
+            print bcolors.BLUE + '''
     -----------------------------------------------------
     | You can hear the steps behind you.                |
     | You turned around immediatly and last thing       |
     | that you can see was the angry old mans' face.    |
     | He put a very powerful spell on you.              |
     -----------------------------------------------------
-    '''
+    ''' + bcolors.END
             damage()
             start()
 #        elif ""
@@ -214,7 +224,8 @@ def lab_room():
         elif "exit" in choice:
             exit(0)
         else:
-            print "I can't understand you!"
+            print bcolors.BLUE + '''
+            I can't understand you! ''' + bcolors.END
             gold_room()
 
 start()
