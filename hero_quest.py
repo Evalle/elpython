@@ -18,7 +18,7 @@ class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
+    INFO = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
@@ -27,31 +27,31 @@ class bcolors:
 # this function is for hero's inventory checking
 def check_invent():
     if len(inventory) == 0:
-        print '''
+        print bcolors.INFO + '''
     >>> Your inventory is empty <<<
-    '''
+    ''' + bcolors.ENDC
     else:
         for i in inventory:
-            print '''
-    >>> \nYou have the %r in you inventory <<<
-            ''' % i
+            print bcolors.INFO + '''
+    >>> You have the %r in your inventory <<<
+            ''' % i + bcolors.ENDC
 
 # this function is for hero's lives checking
 def check_lives():
     global lives
     if lives == 1:
-        print '''
+        print bcolors.FAIL + '''
     >>> You have only 1 live left, be careful! <<<
-        '''
+        ''' + bcolors.ENDC
     else:
-        print '''
+        print bcolors.INFO + '''
     >>> You have %d lives <<<
-        ''' % lives
+        ''' % lives + bcolors.ENDC
 
 def dead():
-    print '''
+    print bcolors.FAIL + '''
     >>> You have no lives left, you're dead! <<<
-    '''
+    ''' + bcolors.ENDC
     exit(0)
 
 def tip_rand():
@@ -179,7 +179,7 @@ def lab_room():
     | What will you do?                                                     |
     -------------------------------------------------------------------------
     '''
-        choice = raw_input('> Make your choice: ')
+        choice = raw_input('> Make your choice: ') 
         if "drink" in choice:
             print '''
     -----------------------------------------
@@ -202,7 +202,7 @@ def lab_room():
     '''
             damage()
             start()
-        elif ""
+#        elif ""
         elif "inventory" in choice:
             check_invent()
             lab_room()
