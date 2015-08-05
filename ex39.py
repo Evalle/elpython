@@ -42,4 +42,24 @@ print divider
 for state, abbrev in states.items():
     print "%s is abbrevated %s" % (state, abbrev)
 
+# print every city in state
+print divider
+for abbrev, city in cites.items():
+    print "%s has the city %s" % (abbrev, city)
 
+# now do both at the same time
+print divider
+for state, abbrev in states.items():
+    print "%s state is abbreviated %s and has city %s" % (
+            state, abbrev, cities[abbrev])
+
+print divider
+# safely get abbrevation by state that might not be there
+state = states.get('Texas')
+
+if not state:
+    print "Sorry, no Texas."
+
+# get a city with a default value
+city = cities.get('TX', 'Does not exist')
+print "The city for the state 'TX' is: %s" % city
