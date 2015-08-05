@@ -44,7 +44,7 @@ for state, abbrev in states.items():
 
 # print every city in state
 print divider
-for abbrev, city in cites.items():
+for abbrev, city in cities.items():
     print "%s has the city %s" % (abbrev, city)
 
 # now do both at the same time
