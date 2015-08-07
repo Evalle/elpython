@@ -2,3 +2,6 @@
 
 def apple():
     print "I AM APPLES"
+
+# add variable
+tangerine = "Living reflection of a dream"
