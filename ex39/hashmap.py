@@ -1,3 +1,4 @@
+# create a list inside list
 def new(num_buckets=256):
     """Initializes a Map with the given number of buckets."""
     aMap = []
@@ -5,6 +6,7 @@ def new(num_buckets=256):
         aMap.append([])
     return aMap
 
+# convert a key to an integer
 def hash_key(aMap, key):
     """Given a key this will create a number and then convert it to 
     an index for the aMap's buckets."""
