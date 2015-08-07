@@ -1,4 +1,4 @@
-# create a list inside list
+# create a list inside ist
 def new(num_buckets=256):
     """Initializes a Map with the given number of buckets."""
     aMap = []
