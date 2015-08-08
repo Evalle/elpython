@@ -1,7 +1,7 @@
 class Song(object):
 
     def __init__(self, lyrcis):
-        self.lyrcis = lyrics
+        self.lyrics = lyrics
 
     def sing_me_a_song(self):
         for line in self.lyrcis:
