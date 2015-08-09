@@ -8,12 +8,12 @@ class Song(object):
             print line
 
 happy_bday = Song(["Happy birthday to you",
-                   "I don't want to get sued",
-                   "So I'll stop right there"])
+                   "Happy bday to you"])
 
-bulls_on_parade = Song(["They rally around tha family",
-                        "With pockets full of shells"])
+smells_like_teen_spirit = Song(["Load up on guns and bring your friends",
+                                "It's fun to lose and to pretend"])
 
 happy_bday.sing_me_a_song()
 
-bulls_on_parade.sing_me_a_song()
+smells_like_teen_spirit.sing_me_a_song()
+
