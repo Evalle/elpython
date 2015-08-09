@@ -7,11 +7,15 @@ class Song(object):
         for line in self.lyrics:
             print line
 
-happy_bday = Song(["Happy birthday to you",
-                   "Happy bday to you"])
+happy_bday_lyrics = ["Happy birthday to you",
+                     "Happy birthday to you"]
 
-smells_like_teen_spirit = Song(["Load up on guns and bring your friends",
-                                "It's fun to lose and to pretend"])
+slts_lyrics = ["Load up on guns and bring your friends",
+               "It's fun to lose and to pretend"]
+
+happy_bday = Song(happy_bday_lyrics)
+
+smells_like_teen_spirit = Song(slts_lyrics)
 
 happy_bday.sing_me_a_song()
 
