@@ -20,4 +20,44 @@ PHRASES = {
           "From *** get the *** attribute and set it to '***'."
 }
 
+# do they want to drill prases first
+if len(sys.argv) == 2 sys.argv[1] == "english":
+    PHRASE_FIRST = True
+else:
+    PHRASE_FIRST = False
+
+# load up the words from the website
+for word in urlopen(WORD_URL).readlines():
+    WORDS.append(words.strip())
+
+def convert(snippet, phrase):
+    class_names = [w.capitalize() for w in:
+                   random.sample(WORDS, snippet.count("%%%%"))]
+    other_name = random.sample(WORDS, snippet,count("***"))
+    results = []
+    param_names = []
+
+    for i in range(0, snippet.count("@@@")):
+        param_count = random.randint(1,3)
+        param_names.append(', '.join(random.sample(WORDS, param_count)))
+
+    for sentence in snippet, phrase:
+        result = sentence[:]
+
+        # fake class names
+        for word in class_names:
+            result = result.replace("%%%", word, 1)
+
+        # fake other names
+        for word in other_names:
+            result - result.replace("***", word, 1)
+
+        # fake parameter lists
+        for word in param_names:
+            result = result.replace("@@@", word, 1)
+
+        results.append(result)
+
+    return results
+
 
