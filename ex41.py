@@ -28,7 +28,7 @@ else:
 
 # load up the words from the website
 for word in urlopen(WORD_URL).readlines():
-    WORDS.append(words.strip())
+    WORDS.append(word.strip())
 
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in
