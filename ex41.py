@@ -20,7 +20,7 @@ PHRASES = {
           "From *** get the *** attribute and set it to '***'."
 }
 
-# do they want to drill prases first
+# do they want to drill phrases first
 if len(sys.argv) == 2 and sys.argv[1] == "english":
     PHRASE_FIRST = True
 else:
@@ -32,7 +32,7 @@ for word in urlopen(WORD_URL).readlines():
 
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in
-                   random.sample(WORDS, snippet.count("%%%%"))]
+                   random.sample(WORDS, snippet.count("%%%"))]
     other_names = random.sample(WORDS, snippet.count("***"))
     results = []
     param_names = []
@@ -60,7 +60,7 @@ def convert(snippet, phrase):
 
     return results
 
-# akeep going until they hit CTRL-D
+# keep going until they hit CTRL-D
 try:
     while True:
         snippets = PHRASES.keys()
