@@ -33,7 +33,7 @@ for word in urlopen(WORD_URL).readlines():
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in
                    random.sample(WORDS, snippet.count("%%%%"))]
-    other_name = random.sample(WORDS, snippet,count("***"))
+    other_name = random.sample(WORDS, snippet.count("***"))
     results = []
     param_names = []
 
