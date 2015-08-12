@@ -9,6 +9,13 @@ class Dog(Animal):
         ## dog has-a name
         self.name = name
 
+## Cat is-a animal
+class Cat(Animal):
+
+    def __init__(self, name):
+        ## cat has-a name
+        self.name = name
+
 ## Person is-a object
 class Person(object):
 
