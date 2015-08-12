@@ -19,7 +19,7 @@ class Cat(Animal):
 ## Person is-a object
 class Person(object):
 
-    def __init__(self, ma,e):
+    def __init__(self, name):
         ## Person has-a name
         self.name = name
 
