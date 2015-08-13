@@ -1,9 +1,13 @@
 # Code the classes and a test to run them
+from sys import exit
+from random import randint
+
 class Scene(object):
 
     def enter(self):
-        pass
-
+        print "This scene is not yet configured. Subclass it and implement enter()."
+        exit(1)
+        
 class Engine(object):
 
     def __init__(self, scene_map):
@@ -11,6 +15,18 @@ class Engine(object):
 
     def play(self):
         pass
+
+class Map(object):
+
+    def __init__(self, start_scene):
+        pass
+
+    def next_scene(self, scene_name):
+        pass
+
+    def opening_scene(self):
+        pass
+
 
 class Death(Scene):
 
@@ -25,7 +41,7 @@ class CentralCorridor(Scene):
 class LaserWeaponArmory(Scene):
 
     def enter(self):
-        pass 
+        pass
 
 class TheBridge(Scene):
 
@@ -35,17 +51,6 @@ class TheBridge(Scene):
 class EscapePod(Scene):
 
     def enter(self):
-        pass
-
-class Map(object):
-
-    def __init__(self, start_scene):
-        pass
-
-    def next_scene(self, scene_name):
-        pass
-
-    def opening_scene(self):
         pass
 
 a_map = Map('central_corridor')
