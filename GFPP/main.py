@@ -73,7 +73,7 @@ class CentralCorridor(Scene):
             print "you are dead. Then he eats you."
             return 'death'
 
-        elif action =="dodge!":
+        elif action == "dodge!":
             print "Like a world class boxer you dodge, weave, slip and slide right"
             print "as the Gothon's blaster cranks a laser past your head."
             print "In the middle of your artful dodge your foot slips and you"
@@ -82,7 +82,17 @@ class CentralCorridor(Scene):
             print "your head abd eats you."
             return 'death'
 
-            
+        elif action == "tell a joke":
+            print "Lucky for you they made you learn Gothon insults in the academy."
+            print "You tell the one Gothon joke you know:"
+            print "Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr."
+            print "The Gothin stops, tries not to laugh, then busts out laughing and can't move."
+            print "While he's laughing you run up and shoot him square in the head"
+            print "putting him down, then jump through the Weapon Armory door."
+            return 'laser_weapon_armory'
+
+        else:
+            print "DOES NOT COMPUTE!"   
 
 
 class LaserWeaponArmory(Scene):
