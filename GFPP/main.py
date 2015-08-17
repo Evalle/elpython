@@ -62,6 +62,17 @@ class CentralCorridor(Scene):
         print "flowing around his hate filled body. He's blocking the door to the"
         print "Armory and about to pull a weapon to blast you."
 
+        action = raw_input("> ")
+
+        if action == "shoout!":
+            print "Quick in the draw you yank out your blaster abd fire it at the Gothon."
+            print "His clown costume is flowing and moving around his body, which throws"
+            print "off your aim. Your laser hits his costume but misses him entirely. This"
+            print "completely ruins his brand new costume his mother bought him, which"
+            print "makes him fly into an insane rage and blast youre repeatedly in the face until"
+            print "you are dead. Then he eats you."
+            return 'death'
+
         
 class LaserWeaponArmory(Scene):
 
