@@ -25,15 +25,24 @@ class Engine(object):
         current_scene.enter()
 
 class Map(object):
+    
+    scenes = {
+            'laser_weapon_armory': LaserWeaponArmory(),
+            'the_bridge': TheBridge(),
+            'escape_pod': EscapePod(),
+            'death': Death(),
+            'finished': Finished(),
+    }
 
     def __init__(self, start_scene):
-        pass
+        self.start_sene = start_scene
 
     def next_scene(self, scene_name):
-        pass
+        val = Map.scenes.get(scene_name)
+        return val
 
     def opening_scene(self):
-        pass
+        return self.next_scene(self.start_scene)
 
 
 class Death(Scene):
