@@ -27,11 +27,12 @@ class Engine(object):
 class Map(object):
     
     scenes = {
-            'laser_weapon_armory': LaserWeaponArmory(),
-            'the_bridge': TheBridge(),
-            'escape_pod': EscapePod(),
-            'death': Death(),
-            'finished': Finished(),
+        'central_corridor': CentralCorridor(), 
+        'laser_weapon_armory': LaserWeaponArmory(),
+        'the_bridge': TheBridge(),
+        'escape_pod': EscapePod(),
+        'death': Death(),
+        'finished': Finished(),
     }
 
     def __init__(self, start_scene):
