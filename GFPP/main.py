@@ -192,6 +192,13 @@ class EscapePod(Scene):
 
             return 'finished'
 
+class FinishedScene(self):
+    
+    def enter(self):
+        print "You won! Great job!"
+        return 'finished'
+
+
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
 a_game.play()
