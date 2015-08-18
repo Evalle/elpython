@@ -192,7 +192,7 @@ class EscapePod(Scene):
 
             return 'finished'
 
-class FinishedScene(self):
+class Finished(Scene):
     
     def enter(self):
         print "You won! Great job!"
