@@ -2,6 +2,13 @@
 from sys import exit
 from random import randint
 
+class bcolors:
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    END = '\033[0m'
+
 class Scene(object):
 
     def enter(self):
@@ -39,7 +46,7 @@ class Death(Scene):
 class CentralCorridor(Scene):
 
     def enter(self):
-        print "The Gothons of Planet Percal #25 have invaded your ship and destroy"
+        print bcolors.BLUE + "The Gothons of Planet Percal #25 have invaded your ship and destroy"
         print "your entire crew. You are the last surviving member and your last"
         print "misson is to get the neutron destruct bomb from the Weapons Armory"
         print "put it in the bridge, and blow the ship up after getting into"
@@ -48,8 +55,8 @@ class CentralCorridor(Scene):
         print "You're running down the central corridor to the Weapons Armory when"
         print "a Gothon jumps out, red scaly skin, dark grimy teeth, and evil clow"
         print "flowing around his hate filled body. He's blocking the door to the"
-        print "Armory and about to pull a weapon to blast you."
-
+        print "Armory and about to pull a weapon to blast you." + bcolors.END
+        print ''
         action = raw_input("> ")
 
         if  "shoot" in action:
@@ -78,6 +85,12 @@ class CentralCorridor(Scene):
             print "While he's laughing you run up and shoot him square in the head"
             print "putting him down, then jump through the Weapon Armory door."
             return 'laser_weapon_armory'
+        
+        elif action == "exit":
+            print ''
+            print bcolors.GREEN + 'BYE!' + bcolors.END 
+            print ''
+            exit(1)
 
         else:
             print "DOES NOT COMPUTE!"
