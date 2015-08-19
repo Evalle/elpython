@@ -24,28 +24,6 @@ class Engine(object):
         # be sure to print out the last scene
         current_scene.enter()
 
-class Map(object):
-    
-    scenes = {
-        'central_corridor': CentralCorridor(), 
-        'laser_weapon_armory': LaserWeaponArmory(),
-        'the_bridge': TheBridge(),
-        'escape_pod': EscapePod(),
-        'death': Death(),
-        'finished': Finished(),
-    }
-
-    def __init__(self, start_scene):
-        self.start_sene = start_scene
-
-    def next_scene(self, scene_name):
-        val = Map.scenes.get(scene_name)
-        return val
-
-    def opening_scene(self):
-        return self.next_scene(self.start_scene)
-
-
 class Death(Scene):
     quips = [
         "You died. You kinda suck at his.",
@@ -208,6 +186,26 @@ class Finished(Scene):
         print "You won! Great job!"
         return 'finished'
 
+class Map(object):
+    
+    scenes = {
+        'central_corridor': CentralCorridor(), 
+        'laser_weapon_armory': LaserWeaponArmory(),
+        'the_bridge': TheBridge(),
+        'escape_pod': EscapePod(),
+        'death': Death(),
+        'finished': Finished(),
+    }
+
+    def __init__(self, start_scene):
+        self.start_sene = start_scene
+
+    def next_scene(self, scene_name):
+        val = Map.scenes.get(scene_name)
+        return val
+
+    def opening_scene(self):
+        return self.next_scene(self.start_scene)
 
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
