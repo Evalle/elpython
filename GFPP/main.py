@@ -45,14 +45,14 @@ class CentralCorridor(Scene):
         print "put it in the bridge, and blow the ship up after getting into"
         print "escape pod."
         print "\n"
-        print "You're running dwon the central corridor to the Weapons Armory when"
+        print "You're running down the central corridor to the Weapons Armory when"
         print "a Gothon jumps out, red scaly skin, dark grimy teeth, and evil clow"
         print "flowing around his hate filled body. He's blocking the door to the"
         print "Armory and about to pull a weapon to blast you."
 
         action = raw_input("> ")
 
-        if action == "shoout!":
+        if  "shoot" in action:
             print "Quick in the draw you yank out your blaster abd fire it at the Gothon."
             print "His clown costume is flowing and moving around his body, which throws"
             print "off your aim. Your laser hits his costume but misses him entirely. This"
@@ -61,7 +61,7 @@ class CentralCorridor(Scene):
             print "you are dead. Then he eats you."
             return 'death'
 
-        elif action == "dodge!":
+        elif "dodge" in action:
             print "Like a world class boxer you dodge, weave, slip and slide right"
             print "as the Gothon's blaster cranks a laser past your head."
             print "In the middle of your artful dodge your foot slips and you"
@@ -92,7 +92,7 @@ class LaserWeaponArmory(Scene):
         print "nutron bomb in its container. There's a keypad lock on the box"
         print "and you need the code to get the bomb out. If you get the code"
         print "wrong 10 times then the lock closes forever and you can't"
-        print "het the bomb. The code is 3 digits."
+        print "get the bomb. The code is 3 digits."
         code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
         guess = raw_input("[keypad]>")
         guesses = 0
