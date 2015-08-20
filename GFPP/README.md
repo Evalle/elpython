@@ -2,6 +2,10 @@
 
 *This is an improved version of the "GOTHONS of Planet Percal #25" (see http://learnpythonthehardway.org/book/ex43.html) text-adventure game*
 
+Main repo had been moved to https://github.com/Evalle/GPP
+
+This repository here is only for history. 
+
 # Free software
 
 GPP - Copyright (C) 2015 Evgeny Shmarnev shmarnev@gmail.com
