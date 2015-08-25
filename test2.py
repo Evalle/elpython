@@ -1,15 +1,13 @@
-# Override Explicity
-
 class Parent(object):
 
     def function(self):
-        print "Parent function()"
+        print "Parent's function()"
 
 class Child(Parent):
     pass
 
 dad = Parent()
-son = Child()
+child = Child()
 
 dad.function()
-son.function()
+child.function()
