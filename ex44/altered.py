@@ -1,20 +1,17 @@
-# Altered before and after 
-
 class Parent(object):
     
     def function(self):
-        print "Parent function()"
+        print "Parent"
 
 class Child(Parent):
-    
+
     def function(self):
-        print "Child before parent altered"
+        print "child"
         super(Child, self).function()
-        print "Child after partent altered"
+        print "Child"
 
 dad = Parent()
 son = Child()
 
 dad.function()
 son.function()
-        
