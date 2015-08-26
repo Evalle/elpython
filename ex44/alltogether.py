@@ -1,34 +1,34 @@
-# all together: override, implicit, altered
+# implicit, override, altered: all together
 
 class Parent(object):
 
-    def override(self):
-        print "PARENT override()"
-
     def implicit(self):
-        print "PARENT implicit()"
+        print "Parent implicit"
+
+    def override(self):
+        print "Parent override"
 
     def altered(self):
-        print "PARENT altered()"
+        print "Parent altered"
 
 class Child(Parent):
-
-    def implicit(self):
-        print "CHILD override()"
+    
+    def override(self):
+        print "Child Override"
 
     def altered(self):
-        print "CHILD before PARENT altered"
+        print "Before altered"
         super(Child, self).altered()
-        print "CHILD after PARENT altered"
+        print "After altered"
 
 dad = Parent()
 son = Child()
 
-dad.override()
-son.override()
-
 dad.implicit()
 son.implicit()
+
+dad.override()
+son.override()
 
 dad.altered()
 son.altered()
