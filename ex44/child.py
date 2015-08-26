@@ -1,6 +1,3 @@
-# example of using composition to package code into modules
-# 2. Child
-
 from other import Other
 
 class Child(object):
@@ -12,7 +9,7 @@ class Child(object):
         self.other.implicit()
 
     def override(self):
-        print "CHILD override"
+        print "CHILD override()"
 
     def altered(self):
         print "CHILD before altered"

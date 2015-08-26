@@ -1,13 +1,12 @@
-# example for using compostion for packaging code into modules
-# basic module Other
+# example of composition
 
 class Other(object):
-
+    
     def implicit(self):
-        print "OTHER implicit"
+        print "OTHER implicit()"
 
     def override(self):
-        print "OTHER override"
+        print "OTHER override()"
 
     def altered(self):
-        print "OTHER altered"
+        print "OTHER altered()"
