@@ -1,0 +1,19 @@
+if (this_is_one thing and
+    that_is_another_thing):
+    do_something()
+
+if (this_is_one_thing
+        and that_is_another_thing):
+    do_somtheing()
+
+my_list = [
+    1, 2, 3,
+    4, 5, 6,
+    ]
+
+result = some_function_that_takes_arguments(
+        'a', 'b', 'c',
+        'd', 'e', 'f',
+        )
+
+
