@@ -1,6 +1,6 @@
-Python lessons and demo code 
+####This is a demo repository. 
 
-Some referencies:
+#####Some of my learning material:
 
 - [ ] "Learn Python the Hard way": http://learnpythonthehardway.org/boo
 - [ ] Mark Lutz "Learning Python"
