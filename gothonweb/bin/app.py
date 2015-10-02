@@ -11,7 +11,7 @@ render = web.template.render('templates/')
 class index:
     def GET(self):
         form = web.input(name="Nobody")
-        greeting = "Hello world"
+        greeting = "Hello, %s" % form.name
         
         return render.index(greeting = greeting)
 
