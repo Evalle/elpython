@@ -6,6 +6,8 @@ urls = (
 
 app = web.application(urls,globals())
 
+render = web.template.render('templates/')
+
 class index:
     def GET(self):
         greeting = "Hello world"
