@@ -4,7 +4,7 @@ urls = (
   '/hello', 'index'
 )
 
-app = web.application(urls,globals())
+app = web.application(urls, globals())
 
 render = web.template.render('templates/')
 
