@@ -10,3 +10,7 @@ def test_index():
     #test our first GET request to /hello
     resp = app.request("/hello")
     assert_response(resp)
+
+    #make sure default value work for the form
+    resp = app.request("/heelo", method="POST")
+    assert_response(resp, contains="Nobody")
