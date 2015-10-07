@@ -10,3 +10,10 @@ if status == "200":
 
 if contains:
     assert contains in resp.data, "Response does not contain %r" % contains
+
+if matches:
+    reg = re.compile(matches)
+    assert reg.matches(resp.data), "Response does not match %r" % matches
+
+if headers:
+    assert_equal(resp.headers, headers)
