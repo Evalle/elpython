@@ -1,1 +1,12 @@
-# here will be some code soon
+from nose.tools import *
+import re
+
+def assert_response(resp, contains=None, matches=None, headers=None, status="200"):
+
+assert status in resp.status, "Expected response %r not in %r" % (status, resp.status)
+
+if status == "200":
+    assert resp.data, "Response data is empty."
+
+if contains:
+    assert contains in resp.data, "Response does not contain %r" % contains
