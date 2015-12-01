@@ -2,7 +2,7 @@
 
 #####Some of my learning material:
 
-- [ ] "Learn Python the Hard way": http://learnpythonthehardway.org/boo
+- [X] "Learn Python the Hard way": http://learnpythonthehardway.org/boo
 - [ ] Mark Lutz "Learning Python"
 - [ ] Brad Miller, David Rabum "Problem Solving with Algorithms and Data Structures"
 - [ ] Noah Gift, Jeremy M. Jones "Python for Unix and Linux System Administration"
